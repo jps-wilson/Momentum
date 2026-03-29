@@ -72,7 +72,7 @@
                 <form id="add-task-form" aria-label="Add a new task" novalidate>
                     <label for="new-task-input" class="visually-hidden">New task</label>
                     <input id="new-task-input" type="text" placeholder="Add a task..." required />
-                    <input id="task-due-date" type="text" placeholder="yyy-mm-dd" />
+                    <input id="task-due-date" type="text" placeholder="Due date" />
                     <input id="task-notes" type="text" placeholder="Notes (optional)" />
                     <button type="submit">Add</button>
                 </form>
@@ -106,6 +106,9 @@
                 </div>
                 <div class="insight-item" id="streak-insight">
                     <p id="insights-summary">You've completed <span id="completed-count">0</span> tasks</p>
+                </div>
+                <div class="insight-item" id="motivation-insight">
+                    <p id="motivation-message"></p>
                 </div>
             </div>
         </section>
