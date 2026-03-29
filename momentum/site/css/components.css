@@ -452,12 +452,76 @@ input[type="date"] {
   background: var(--color-accent);
   color: #fff;
 }
+
+/* Flatpickr Dark Mode */
+[data-theme="dark"] .flatpickr-calendar {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .flatpickr-month {
+  color: var(--light-text-primary);
+  fill: var(--light-text-primary);
+}
+
+[data-theme="dark"] .flatpickr-weekday {
+  color: var(--light-text-tertiary);
+}
+
+[data-theme="dark"] .flatpickr-day {
+  color: var(--light-text-primary);
+}
+
+[data-theme="dark"] .flatpickr-day:hover {
+  background: var(--color-hover);
+  border-color: var(--color-hover);
+}
+
+[data-theme="dark"] .flatpickr-day.flatpickr-disabled,
+[data-theme="dark"] .flatpickr-day.prevMonthDay,
+[data-theme="dark"] .flatpickr-day.nextMonthDay {
+  color: var(--light-text-disabled);
+}
+
+[data-theme="dark"] .flatpickr-current-month input.cur-year,
+[data-theme="dark"] .flatpickr-current-month .flatpickr-monthDropdown-months {
+  color: var(--light-text-primary);
+}
+
+[data-theme="dark"] .numInputWrapper span {
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .flatpickr-prev-month,
+[data-theme="dark"] .flatpickr-next-month {
+  fill: var(--light-text-primary);
+  color: var(--light-text-primary);
+}
+
 .empty-state {
   text-align: center;
   color: var(--color-accent);
   margin-top: 2em;
   font-size: 1.2em;
   opacity: 0.7;
+}
+
+/* MOTIVATION INSIGHT STYLING */
+#motivation-insight {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-md);
+}
+
+#motivation-message {
+  font-size: var(--font-size-metadata);
+  color: var(--dark-text-tertiary);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+[data-theme="dark"] #motivation-message {
+  color: var(--light-text-tertiary);
 }
 
 /* * MEDIA QUERIES * */
