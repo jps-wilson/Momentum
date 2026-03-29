@@ -182,6 +182,7 @@ function renderTasks() {
   updateInsightsSummary();
   updateNavCounts();
   updateTaskCountMessage();
+  updateMotivationMessage();
 }
 
 function getDragAfterElement(container, y) {
@@ -289,7 +290,6 @@ function updateInsightsSummary() {
 
 function updateNavCounts() {
   const todayTasks = tasks.filter((t) => !t.completed && isToday(t.dueDate));
-  console.log("Today tasks:", todayTasks);
 
   const todayCount = todayTasks.length;
   const todayBadge = document.getElementById("today-badge");
@@ -306,4 +306,24 @@ function updateNavCounts() {
 
   const completedBadge = document.getElementById("completed-badge");
   if (completedBadge) completedBadge.textContent = completedCount;
+}
+
+function updateMotivationMessage() {
+  const total = tasks.length;
+  const completed = tasks.filter((t) => t.completed).length;
+  const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
+
+  const messages = {
+    0: "Every journey starts with a single task. You've got this.",
+    25: "Good start. Keep the momentum going.",
+    50: "Halfway there. The hardest part is behind you.",
+    75: "Almost done. Don't stop now.",
+    100: "Everything done. That's not nothing — that's everything.",
+  };
+
+  const threshold = [100, 75, 50, 25, 0].find((t) => percent >= t);
+  const message = messages[threshold];
+
+  const el = document.getElementById("motivation-message");
+  if (el) el.textContent = message;
 }
